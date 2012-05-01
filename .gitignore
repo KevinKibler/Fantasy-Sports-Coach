@@ -1,12 +1,7 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
+#Temporary Project Data Files
+*.suo
+*.user
 
-# Compiled Dynamic libraries
-*.so
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+#Build Directories
+obj/
+bin/

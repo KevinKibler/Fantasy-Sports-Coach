@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Rebuild" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<Import Project="..\Common.targets"/>
+	
+	<Target Name="Build">
+		<Message Text="build libs" />
+	</Target>
+	
+	<Target Name="Clean">
+		<Message Text="clean libs" />
+	</Target>
+	
+	<Target Name="Rebuild" DependsOnTargets="Clean;Build" />
+</Project>

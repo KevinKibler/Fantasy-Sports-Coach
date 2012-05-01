@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Rebuild" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), Common.targets))\Common.targets" Condition=" '$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), Common.targets))' != '' " />
+	
+	<Target Name="Build">
+		<CallTarget Targets="DisplayProperties" Condition="$(Verbose)" />
+		
+		<MSBuild Projects="libs\build.proj" Targets="Build" />
+		<MSBuild Projects="apps\build.proj" Targets="Build" />
+		<MSBuild Projects="tests\build.proj" Targets="Build" Condition="$(Build_Tests)" />
+	</Target>
+	
+	<Target Name="Clean">
+		<CallTarget Targets="DisplayProperties" Condition="$(Verbose)" />
+
+		<MSBuild Projects="libs\build.proj" Targets="Clean" />
+		<MSBuild Projects="apps\build.proj" Targets="Clean" />
+		<MSBuild Projects="tests\build.proj" Targets="Clean" Condition="$(Build_Tests)" />
+	</Target>
+	
+	<Target Name="Test">
+		<MSBuild Projects="tests\build.proj" Targets="Run" />
+	</Target>
+
+	<Target Name="Rebuild" DependsOnTargets="Clean;Build" />
+</Project>

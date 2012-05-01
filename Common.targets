@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<Import Project="Config.targets"/>
+	<PropertyGroup>
+		<Verbose Condition="'$(Verbose)' == ''">True</Verbose>
+		<Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+		<Platform Condition="'$(Platform)' == ''">x86</Platform>
+		
+		<Dir_Root Condition="'$(Dir_Root)' == ''">$(MSBuildThisFileDirectory)</Dir_Root>
+		<Dir_Release Condition="'$(Dir_Release)' == ''">$(Dir_Root)Release\</Dir_Release>
+		<Dir_Store Condition="'$(Dir_Store)' == ''">$(Dir_Root)Store\</Dir_Store>
+		<Dir_Shared Condition="'$(Dir_Shared)' == ''">$(Dir_Root)Shared\</Dir_Shared>
+		<Dir_Extern Condition="'$(Dir_Extern)' == ''">$(Dir_Shared)Extern\</Dir_Extern>
+		<Dir_Images Condition="'$(Dir_Images)' == ''">$(Dir_Root)Images\</Dir_Images>
+		<Dir_Apps Condition="'$(Dir_Apps)' == ''">$(Dir_Root)Apps\</Dir_Apps>
+		<Dir_Libs Condition="'$(Dir_Libs)' == ''">$(Dir_Root)Libs\</Dir_Libs>
+		<Dir_Tests Condition="'$(Dir_Tests)' == ''">$(Dir_Root)Tests\</Dir_Tests>
+
+		<Build_Tests Condition="'$(Build_Tests)' == ''">True</Build_Tests>
+	</PropertyGroup>
+	<Target Name="DisplayProperties">
+		<Message Text="Verbose: $(Verbose)" />
+		<Message Text="Configuration: $(Configuration)" />
+		<Message Text="Platform: $(Platform)" />
+		<Message />
+		<Message Text="Dir_Root: $(Dir_Root)" />
+		<Message Text="Dir_Release: $(Dir_Release)" />
+		<Message Text="Dir_Store: $(Dir_Store)" />
+		<Message Text="Dir_Shared: $(Dir_Shared)" />
+		<Message Text="Dir_Extern: $(Dir_Extern)" />
+		<Message Text="Dir_Images: $(Dir_Images)" />
+		<Message Text="Dir_Apps: $(Dir_Apps)" />
+		<Message Text="Dir_Libs: $(Dir_Libs)" />
+		<Message Text="Dir_Tests: $(Dir_Tests)" />
+	</Target>
+</Project>
