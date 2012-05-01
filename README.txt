@@ -13,3 +13,6 @@ Build Dependencies:
 
 Runtime Dependencies:
 * Microsoft .NET 4.0
+
+Build Instructions:
+Use MSBuild 4.0 to build the project: at project root, run "msbuild.exe Build.proj"
