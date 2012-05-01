@@ -2,6 +2,9 @@
 *.suo
 *.user
 
+#Build Configuration File
+Config.targets
+
 #Build Directories
 obj/
 bin/
