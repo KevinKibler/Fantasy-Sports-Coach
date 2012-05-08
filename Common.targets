@@ -45,7 +45,7 @@
 	<Target Name="AfterClean" />
 
 	<Target Name="CopyLocalDependencies" BeforeTargets="BeforeBuild">
-		<Copy SourceFiles="%(Dependency.FullPath)" DestinationFolder="%(Dependency.DestinationDirectory)" />
+		<Copy SourceFiles="%(Dependency.FullPath)" DestinationFolder="%(Dependency.DestinationDirectory)" SkipUnchangedFiles="false" />
 	</Target>
 
 	<Target Name="CleanLocalDependencies" AfterTargets="AfterClean">
@@ -53,7 +53,7 @@
 	</Target>
 
 	<Target Name="CopyStoreOutput" AfterTargets="AfterBuild">
-		<Copy SourceFiles="%(OutputFile.FullPath)" DestinationFolder="$(ProjectStorePath)%(OutputFile.DestinationDirectory)" />
+		<Copy SourceFiles="%(OutputFile.FullPath)" DestinationFolder="$(ProjectStorePath)%(OutputFile.DestinationDirectory)" SkipUnchangedFiles="false" />
 	</Target>
 
 	<Target Name="CleanStoreOutput" BeforeTargets="BeforeClean">
@@ -64,8 +64,8 @@
 	</Target>
 
 	<Target Name="CopyReleaseOutput" AfterTargets="AfterBuild">
-		<Copy SourceFiles="%(OutputFile.FullPath)" DestinationFolder="$(Dir_Release)%(OutputFile.DestinationDirectory)" Condition="%(OutputFile.ShouldRelease)" />
-		<Copy SourceFiles="%(Dependency.FullPath)" DestinationFolder="$(Dir_Release)%(Dependency.DestinationDirectory)" Condition="%(Dependency.IsRuntimeDependency)" />
+		<Copy SourceFiles="%(OutputFile.FullPath)" DestinationFolder="$(Dir_Release)%(OutputFile.DestinationDirectory)" Condition="%(OutputFile.ShouldRelease)" SkipUnchangedFiles="false" />
+		<Copy SourceFiles="%(Dependency.FullPath)" DestinationFolder="$(Dir_Release)%(Dependency.DestinationDirectory)" Condition="%(Dependency.IsRuntimeDependency)" SkipUnchangedFiles="false" />
 	</Target>
 
 	<Target Name="CleanReleaseOutput" BeforeTargets="BeforeClean">

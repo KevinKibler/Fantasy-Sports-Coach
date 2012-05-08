@@ -8,3 +8,5 @@ Config.targets
 #Build Directories
 obj/
 bin/
+Release/
+Store/
