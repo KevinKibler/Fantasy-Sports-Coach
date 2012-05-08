@@ -19,7 +19,7 @@
 	</Target>
 	
 	<Target Name="Test">
-		<MSBuild Projects="tests\build.proj" Targets="Run" />
+		<MSBuild Projects="tests\build.proj" Targets="Test" />
 	</Target>
 
 	<Target Name="Rebuild" DependsOnTargets="Clean;Build" />

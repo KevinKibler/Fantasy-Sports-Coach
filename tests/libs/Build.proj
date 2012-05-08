@@ -3,15 +3,15 @@
 	<Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), Common.targets))\Common.targets" Condition=" '$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), Common.targets))' != '' " />
 	
 	<Target Name="Build">
-		<MSBuild Projects="libs\Build.proj" Targets="Build" />
+		<MSBuild Projects="CommonTests\CommonTests.csproj" Targets="Build" />
 	</Target>
 	
 	<Target Name="Clean">
-		<MSBuild Projects="libs\Build.proj" Targets="Clean" />
+		<MSBuild Projects="CommonTests\CommonTests.csproj" Targets="Clean" />
 	</Target>
 
 	<Target Name="Test">
-		<MSBuild Projects="libs\Build.proj" Targets="Test" />
+		<MSBuild Projects="CommonTests\CommonTests.csproj" Targets="Test" />
 	</Target>
 	
 	<Target Name="Rebuild" DependsOnTargets="Clean;Build" />

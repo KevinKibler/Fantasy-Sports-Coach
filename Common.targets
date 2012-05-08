@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
-	<Import Project="Config.targets"/>
+	<Import Project="Config.targets" Condition="Exists('Config.targets')"/>
 	<PropertyGroup>
 		<Verbose Condition="'$(Verbose)' == ''">True</Verbose>
 		<Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
-		<Platform Condition="'$(Platform)' == ''">x86</Platform>
-		
+		<!--<Platform Condition="'$(Platform)' == ''">x86</Platform>-->
+
 		<Dir_Root Condition="'$(Dir_Root)' == ''">$(MSBuildThisFileDirectory)</Dir_Root>
 		<Dir_Release Condition="'$(Dir_Release)' == ''">$(Dir_Root)Release\</Dir_Release>
 		<Dir_Store Condition="'$(Dir_Store)' == ''">$(Dir_Root)Store\</Dir_Store>
@@ -15,13 +15,17 @@
 		<Dir_Apps Condition="'$(Dir_Apps)' == ''">$(Dir_Root)Apps\</Dir_Apps>
 		<Dir_Libs Condition="'$(Dir_Libs)' == ''">$(Dir_Root)Libs\</Dir_Libs>
 		<Dir_Tests Condition="'$(Dir_Tests)' == ''">$(Dir_Root)Tests\</Dir_Tests>
+		<ProjectStorePath>$(Dir_Store)$(AssemblyName)\</ProjectStorePath>
+
+		<NUnitConsolePath>$(Dir_Shared)extern\NUnit\Bin\nunit-console.exe</NUnitConsolePath>
 
 		<Build_Tests Condition="'$(Build_Tests)' == ''">True</Build_Tests>
 	</PropertyGroup>
+
 	<Target Name="DisplayProperties">
 		<Message Text="Verbose: $(Verbose)" />
 		<Message Text="Configuration: $(Configuration)" />
-		<Message Text="Platform: $(Platform)" />
+		<!--<Message Text="Platform: $(Platform)" />-->
 		<Message />
 		<Message Text="Dir_Root: $(Dir_Root)" />
 		<Message Text="Dir_Release: $(Dir_Release)" />
@@ -32,5 +36,51 @@
 		<Message Text="Dir_Apps: $(Dir_Apps)" />
 		<Message Text="Dir_Libs: $(Dir_Libs)" />
 		<Message Text="Dir_Tests: $(Dir_Tests)" />
+		<Message Text="" />
 	</Target>
+
+	<Target Name="BeforeBuild" />
+	<Target Name="AfterBuild" />
+	<Target Name="BeforeClean" />
+	<Target Name="AfterClean" />
+
+	<Target Name="CopyLocalDependencies" BeforeTargets="BeforeBuild">
+		<Copy SourceFiles="%(Dependency.FullPath)" DestinationFolder="%(Dependency.DestinationDirectory)" />
+	</Target>
+
+	<Target Name="CleanLocalDependencies" AfterTargets="AfterClean">
+		<Delete Files="%(Dependency.DestinationDirectory)\%(Dependency.FileName)%(Dependency.Extension)" />
+	</Target>
+
+	<Target Name="CopyStoreOutput" AfterTargets="AfterBuild">
+		<Copy SourceFiles="%(OutputFile.FullPath)" DestinationFolder="$(ProjectStorePath)%(OutputFile.DestinationDirectory)" />
+	</Target>
+
+	<Target Name="CleanStoreOutput" BeforeTargets="BeforeClean">
+		<!--<Delete Files="$(ProjectStorePath)%(OutputFile.DestinationDirectory)\%(OutputFile.FileName)%(OutputFile.Extension)" />-->
+
+		<Exec Command="rmdir /S /Q &quot;$(ProjectStorePath)&quot;"/>
+		<Exec Command="rmdir /S /Q &quot;$(ProjectStorePath)&quot;"/>
+	</Target>
+
+	<Target Name="CopyReleaseOutput" AfterTargets="AfterBuild">
+		<Copy SourceFiles="%(OutputFile.FullPath)" DestinationFolder="$(Dir_Release)%(OutputFile.DestinationDirectory)" Condition="%(OutputFile.ShouldRelease)" />
+		<Copy SourceFiles="%(Dependency.FullPath)" DestinationFolder="$(Dir_Release)%(Dependency.DestinationDirectory)" Condition="%(Dependency.IsRuntimeDependency)" />
+	</Target>
+
+	<Target Name="CleanReleaseOutput" BeforeTargets="BeforeClean">
+		<Delete Files="$(Dir_Release)%(OutputFile.DestinationDirectory)\%(OutputFile.FileName)%(OutputFile.Extension)" Condition="%(OutputFile.ShouldRelease)" />
+	</Target>
+
+	<!--  
+		$MSBuildToolsPath: C:\Windows\Microsoft.NET\Framework\v4.0.30319
+		@DocFileItem: bin\KSquared.FantasySportsCoach.Common.xml
+		$DocumentationFile: bin\KSquared.FantasySportsCoach.Common.xml
+		@IntermediateAssembly: obj\Release\KSquared.FantasySportsCoach.Common.dll
+		$MSBuildProjectFullPath: C:\Google Drive\Projects\KSquared\Fantasy-Sports-Coach\libs\Common\Common.csproj
+		$TargetFileName: KSquared.FantasySportsCoach.Common.dll
+		$TargetPath: C:\Google Drive\Projects\KSquared\Fantasy-Sports-Coach\libs\Common\bin\KSquared.FantasySportsCoach.Common.dll
+		@_DebugSymbolsOutputPath: bin\KSquared.FantasySportsCoach.Common.pdb
+		@FinalDocFile: bin\KSquared.FantasySportsCoach.Common.xml
+	-->
 </Project>
