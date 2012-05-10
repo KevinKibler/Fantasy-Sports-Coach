@@ -56,14 +56,15 @@ namespace KSquared.FantasySportsCoach.Common
 		{
 			this.CheckReentrancy();
 
-			NotifyCollectionChangingEventArgs e = new NotifyCollectionChangingEventArgs(NotifyCollectionChangedAction.Add, new List<TItem>(collection));
+			var newItems = collection.ToArray();
+			NotifyCollectionChangingEventArgs e = new NotifyCollectionChangingEventArgs(NotifyCollectionChangedAction.Add, newItems);
 			this.OnCollectionChanging(e);
 			if (!e.Cancel)
 			{
 				foreach (var item in collection) { this.Items.Add(item); }
 				this.OnPropertyChanged(new PropertyChangedEventArgs("Count"));
 				this.OnPropertyChanged(new PropertyChangedEventArgs("Item[]"));
-				base.OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, collection.ToList()));
+				base.OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, collection.ToList(), this.Count));
 			}
 		}
 
@@ -101,7 +102,7 @@ namespace KSquared.FantasySportsCoach.Common
 		protected override void SetItem(int index, TItem item)
 		{
 			TItem oldItem = base[index];
-			NotifyCollectionChangingEventArgs e = new NotifyCollectionChangingEventArgs(NotifyCollectionChangedAction.Replace, oldItem, item, index);
+			NotifyCollectionChangingEventArgs e = new NotifyCollectionChangingEventArgs(NotifyCollectionChangedAction.Replace, item, oldItem, index);
 			this.OnCollectionChanging(e);
 			if (!e.Cancel) { base.SetItem(index, item); }
 		}

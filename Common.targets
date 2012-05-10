@@ -45,11 +45,11 @@
 	<Target Name="AfterClean" />
 
 	<Target Name="CopyLocalDependencies" BeforeTargets="BeforeBuild">
-		<Copy SourceFiles="%(Dependency.FullPath)" DestinationFolder="%(Dependency.DestinationDirectory)" SkipUnchangedFiles="false" />
+		<Copy SourceFiles="%(Dependency.FullPath)" DestinationFolder="%(Dependency.DestinationDirectory)" SkipUnchangedFiles="false" ContinueOnError="%(Dependency.Optional)" />
 	</Target>
 
 	<Target Name="CleanLocalDependencies" AfterTargets="AfterClean">
-		<Delete Files="%(Dependency.DestinationDirectory)\%(Dependency.FileName)%(Dependency.Extension)" />
+		<Delete Files="%(Dependency.DestinationDirectory)\%(Dependency.FileName)%(Dependency.Extension)" ContinueOnError="%(Dependency.Optional)" />
 	</Target>
 
 	<Target Name="CopyStoreOutput" AfterTargets="AfterBuild">

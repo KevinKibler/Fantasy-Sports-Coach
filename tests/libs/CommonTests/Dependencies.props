@@ -4,28 +4,34 @@
 		<Dependency Include="$(Dir_Shared)KSquared.snk">
 			<DestinationDirectory>Properties</DestinationDirectory>
 			<IsRuntimeDependency>False</IsRuntimeDependency>
+			<Optional>False</Optional>
 		</Dependency>
 		<Dependency Include="$(Dir_Shared)Version.cs">
 			<DestinationDirectory>Properties</DestinationDirectory>
 			<IsRuntimeDependency>False</IsRuntimeDependency>
+			<Optional>False</Optional>
 		</Dependency>
 	</ItemGroup>
 	<ItemGroup>
 		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.Common\Bin\KSquared.FantasySportsCoach.Common.dll">
 			<DestinationDirectory>bin</DestinationDirectory>
 			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<Optional>False</Optional>
 		</Dependency>
 		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.Common\Bin\KSquared.FantasySportsCoach.Common.xml">
 			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>False</IsRuntimeDependency>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<Optional>False</Optional>
 		</Dependency>
 		<Dependency Include="$(Dir_Shared)extern\NUnit\bin\framework\nunit.framework.dll">
 			<DestinationDirectory>bin</DestinationDirectory>
 			<IsRuntimeDependency>True</IsRuntimeDependency>
-		</Dependency>
+			<Optional>False</Optional>
+	</Dependency>
 		<Dependency Include="$(Dir_Shared)extern\NUnit\bin\framework\nunit.framework.xml">
 			<DestinationDirectory>bin</DestinationDirectory>
 			<IsRuntimeDependency>False</IsRuntimeDependency>
+			<Optional>True</Optional>
 		</Dependency>
 	</ItemGroup>
 	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props')"/>
