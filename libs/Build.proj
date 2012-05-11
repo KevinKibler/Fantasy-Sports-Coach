@@ -4,9 +4,11 @@
 
 	<Target Name="Build">
 		<MSBuild Projects="Common\Common.csproj" Targets="Build" />
+		<MSBuild Projects="SportsModels\SportsModels.csproj" Targets="Build" />
 	</Target>
 
 	<Target Name="Clean">
+		<MSBuild Projects="SportsModels\SportsModels.csproj" Targets="Clean" />
 		<MSBuild Projects="Common\Common.csproj" Targets="Clean" />
 	</Target>
 

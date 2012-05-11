@@ -1,20 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
 	<!--output, this is probably all defined somewhere, but i can't find a coherent list-->
-	<PropertyGroup>
-		<ProjectStorePath>$(Dir_Store)$(AssemblyName)\</ProjectStorePath>
-	</PropertyGroup>
 	<ItemGroup>
 		<OutputFile Include="$(OutputPath)$(TargetFileName)">
-			<DestinationDirectory>Bin</DestinationDirectory>
+			<DestinationDirectory>Bin\</DestinationDirectory>
 			<ShouldRelease>True</ShouldRelease>
 		</OutputFile>
 		<OutputFile Include="$(DocumentationFile)">
-			<DestinationDirectory>Bin</DestinationDirectory>
+			<DestinationDirectory>Bin\</DestinationDirectory>
 			<ShouldRelease>False</ShouldRelease>
 		</OutputFile>
 		<OutputFile Include="@(_DebugSymbolsOutputPath)">
-			<DestinationDirectory>Bin</DestinationDirectory>
+			<DestinationDirectory>Bin\</DestinationDirectory>
 			<ShouldRelease>False</ShouldRelease>
 		</OutputFile>
 		<OutputFile Include="Dependencies.props">
@@ -22,7 +19,4 @@
 			<ShouldRelease>False</ShouldRelease>
 		</OutputFile>
 	</ItemGroup>
-	<Target Name="Test">
-		<Exec Command="&quot;$(NUnitConsolePath)&quot; &quot;$(Dir_Release)$(OutputPath)$(TargetFileName)&quot;" />
-	</Target>
 </Project>

@@ -23,16 +23,6 @@
 			<IsRuntimeDependency>True</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
-		<Dependency Include="$(Dir_Shared)extern\NUnit\bin\framework\nunit.framework.dll">
-			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>True</IsRuntimeDependency>
-			<IsOptional>False</IsOptional>
-	</Dependency>
-		<Dependency Include="$(Dir_Shared)extern\NUnit\bin\framework\nunit.framework.xml">
-			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>False</IsRuntimeDependency>
-			<IsOptional>True</IsOptional>
-		</Dependency>
 	</ItemGroup>
 	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props')"/>
 </Project>

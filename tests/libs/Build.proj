@@ -4,14 +4,17 @@
 	
 	<Target Name="Build">
 		<MSBuild Projects="CommonTests\CommonTests.csproj" Targets="Build" />
+		<MSBuild Projects="SportsModelsTests\SportsModelsTests.csproj" Targets="Build" />
 	</Target>
 	
 	<Target Name="Clean">
+		<MSBuild Projects="SportsModelsTests\SportsModelsTests.csproj" Targets="Clean" />
 		<MSBuild Projects="CommonTests\CommonTests.csproj" Targets="Clean" />
 	</Target>
 
 	<Target Name="Test">
 		<MSBuild Projects="CommonTests\CommonTests.csproj" Targets="Test" />
+		<MSBuild Projects="SportsModelsTests\SportsModelsTests.csproj" Targets="Test" />
 	</Target>
 	
 	<Target Name="Rebuild" DependsOnTargets="Clean;Build" />

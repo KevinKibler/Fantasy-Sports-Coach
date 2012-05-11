@@ -2,20 +2,18 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{49A80305-566D-45E8-8D4C-B0671039224A}</ProjectGuid>
+    <ProjectGuid>{7903946F-710B-444D-A57E-4E2052E615CA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KSquared.FantasySportsCoach.Common.Tests</RootNamespace>
-    <AssemblyName>KSquared.FantasySportsCoach.Common.Tests</AssemblyName>
+    <RootNamespace>KSquared.FantasySportsCoach.SportsModels</RootNamespace>
+    <AssemblyName>KSquared.FantasySportsCoach.SportsModels</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,37 +21,22 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\KSquared.FantasySportsCoach.Common.Tests.xml</DocumentationFile>
+    <DocumentationFile>bin\KSquared.FantasySportsCoach.SportsModels.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\KSquared.FantasySportsCoach.Common.Tests.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Properties\KSquared.snk</AssemblyOriginatorKeyFile>
+    <DocumentationFile>bin\KSquared.FantasySportsCoach.SportsModels.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="KSquared.FantasySportsCoach.Common">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\KSquared.FantasySportsCoach.Common.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-      <HintPath>Bin\nunit.framework.dll</HintPath>
+      <HintPath>Bin\KSquared.FantasySportsCoach.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -65,15 +48,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Version.cs" />
-    <Compile Include="Source\Tests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Dependencies.props" />
     <None Include="Build.targets" />
-    <None Include="Properties\KSquared.snk" />
+    <None Include="Dependencies.props" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Source\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), Common.targets))\Common.targets" Condition=" '$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), Common.targets))' != '' " />
   <Import Project="Dependencies.props" />

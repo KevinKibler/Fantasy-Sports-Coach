@@ -23,16 +23,27 @@
 			<IsRuntimeDependency>True</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
+		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Bin\KSquared.FantasySportsCoach.SportsModels.dll">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>False</IsOptional>
+		</Dependency>
+		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Bin\KSquared.FantasySportsCoach.SportsModels.xml">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>True</IsOptional>
+		</Dependency>
 		<Dependency Include="$(Dir_Shared)extern\NUnit\bin\framework\nunit.framework.dll">
 			<DestinationDirectory>bin</DestinationDirectory>
 			<IsRuntimeDependency>True</IsRuntimeDependency>
 			<IsOptional>False</IsOptional>
-	</Dependency>
+		</Dependency>
 		<Dependency Include="$(Dir_Shared)extern\NUnit\bin\framework\nunit.framework.xml">
 			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>False</IsRuntimeDependency>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
 	</ItemGroup>
 	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props')"/>
+	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Dependencies.props')"/>
 </Project>
