@@ -9,6 +9,7 @@ using System.Collections.Specialized;
 
 namespace KSquared.FantasySportsCoach.Common.Tests
 {
+	/// <summary>Tests for KSquare.FantasySportsCoach.Common.</summary>
 	[TestFixture]
 	public static class CommonTests
 	{
@@ -16,6 +17,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 
 		private static ObservableCollectionEx<int> observableCollectionEx = null;
 
+		/// <summary>Setup for each test.</summary>
 		[SetUp]
 		public static void SetupTests()
 		{
@@ -25,6 +27,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 		#endregion Setup
 		#region Insert
 
+		/// <summary>Test that adding an item to <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestInsert()
 		{
@@ -47,6 +50,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 			Assert.AreEqual(11, CommonTests.observableCollectionEx.Count, "collection count should now be 11");
 		}
 
+		/// <summary>Test that the preview event for adding an item to <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestAddInsertPreview()
 		{
@@ -68,6 +72,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 			Assert.IsTrue(collectionChangingEventRaised, "collection changing event should have been raised");
 		}
 
+		/// <summary>Test that canceling the preview event for adding an item to <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestAddInsertPreviewCancel()
 		{
@@ -90,6 +95,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 		#endregion Insert
 		#region Remove
 
+		/// <summary>Test that removing an item from <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestRemove()
 		{
@@ -112,6 +118,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 			Assert.AreEqual(9, CommonTests.observableCollectionEx.Count, "collection count should be 9");
 		}
 
+		/// <summary>Test that the preview event for removing an item from <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestRemovePreview()
 		{
@@ -133,6 +140,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 			Assert.IsTrue(collectionChangingEventRaised, "collection changing event should have been raised");
 		}
 
+		/// <summary>Test that canceling the preview event for removing an item from <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestRemovePreviewCancel()
 		{
@@ -155,6 +163,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 		#endregion Remove
 		#region Replace
 
+		/// <summary>Test that replacing an item in <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestReplace()
 		{
@@ -179,6 +188,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 			Assert.AreEqual(10, CommonTests.observableCollectionEx.Count, "collection count should still be 10");
 		}
 
+		/// <summary>Test that the preview event for replacing an item in <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestReplacePreview()
 		{
@@ -202,6 +212,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 			Assert.IsTrue(collectionChangingEventRaised, "collection changing event should have been raised");
 		}
 
+		/// <summary>Test that canceling the preview event for replacing an item in <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestReplacePreviewCancel()
 		{
@@ -224,6 +235,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 		#endregion Replace
 		#region Move
 
+		/// <summary>Test that moving an item in <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestMove()
 		{
@@ -248,6 +260,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 			Assert.AreEqual(10, CommonTests.observableCollectionEx.Count, "collection count should still be 10");
 		}
 
+		/// <summary>Test that the preview event for moving an item in <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestMovePreview()
 		{
@@ -271,6 +284,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 			Assert.IsTrue(collectionChangingEventRaised, "collection changing event should have been raised");
 		}
 
+		/// <summary>Test that canceling the preview event for moving an item in <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestMovePreviewCancel()
 		{
@@ -293,6 +307,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 		#endregion Move
 		#region AddRange
 
+		/// <summary>Test that adding multiple items to <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestAddRange()
 		{
@@ -313,6 +328,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 			CommonTests.observableCollectionEx.AddRange(new[] { 100, 101, 102 });
 		}
 
+		/// <summary>Test that the preview event for adding multiple items to <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestAddRangePreview()
 		{
@@ -339,6 +355,7 @@ namespace KSquared.FantasySportsCoach.Common.Tests
 			Assert.AreEqual(13, CommonTests.observableCollectionEx.Count, "collection count should now be 13");
 		}
 
+		/// <summary>Test that cancling the preview event for adding multiple items to <see cref="ObservableCollectionEx{T}"/> works correctly.</summary>
 		[Test]
 		public static void TestAddRangePreviewCancel()
 		{
