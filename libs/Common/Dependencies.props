@@ -4,12 +4,12 @@
 		<Dependency Include="$(Dir_Shared)KSquared.snk">
 			<DestinationDirectory>Properties</DestinationDirectory>
 			<IsRuntimeDependency>False</IsRuntimeDependency>
-			<Optional>False</Optional>
+			<IsOptional>False</IsOptional>
 		</Dependency>
 		<Dependency Include="$(Dir_Shared)Version.cs">
 			<DestinationDirectory>Properties</DestinationDirectory>
 			<IsRuntimeDependency>False</IsRuntimeDependency>
-			<Optional>False</Optional>
+			<IsOptional>False</IsOptional>
 		</Dependency>
 	</ItemGroup>
 </Project>

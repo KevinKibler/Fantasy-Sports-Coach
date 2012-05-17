@@ -19,8 +19,4 @@
 			<ShouldRelease>False</ShouldRelease>
 		</OutputFile>
 	</ItemGroup>
-	<Target Name="BeforeBuild"></Target>
-	<Target Name="AfterBuild"></Target>
-	<Target Name="BeforeClean"></Target>
-	<Target Name="AfterClean"></Target>
 </Project>
