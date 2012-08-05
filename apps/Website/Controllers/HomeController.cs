@@ -9,14 +9,14 @@ namespace FantasySportsCoach.Controllers
 {
 	public class HomeController : Controller
 	{
-		public ActionResult Index()
+		public ViewResult Index()
 		{
 			ViewBag.Message = "Welcome to ASP.NET MVC!";
 
 			return View();
 		}
 
-		public ActionResult About()
+		public ViewResult About()
 		{
 			ViewBag.ProjectUrl = @"https://github.com/CodeSavvyGeek/Fantasy-Sports-Coach";
 			return View();

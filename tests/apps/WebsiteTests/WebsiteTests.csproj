@@ -40,19 +40,32 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="KSquared.FantasySportsCoach.Common">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\KSquared.FantasySportsCoach.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="KSquared.FantasySportsCoach.SportsModels">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\KSquared.FantasySportsCoach.SportsModels.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="KSquared.FantasySportsCoach.Website">
+      <HintPath>bin\KSquared.FantasySportsCoach.Website.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="nunit.framework">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\nunit.framework.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
