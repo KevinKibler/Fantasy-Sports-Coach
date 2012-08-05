@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<ItemGroup>
+		<Dependency Include="$(Dir_Shared)KSquared.snk">
+			<DestinationDirectory>Properties</DestinationDirectory>
+			<IsRuntimeDependency>False</IsRuntimeDependency>
+			<IsOptional>False</IsOptional>
+		</Dependency>
+		<Dependency Include="$(Dir_Shared)Version.cs">
+			<DestinationDirectory>Properties</DestinationDirectory>
+			<IsRuntimeDependency>False</IsRuntimeDependency>
+			<IsOptional>False</IsOptional>
+		</Dependency>
+	</ItemGroup>
+	<ItemGroup>
+		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.Common\Bin\KSquared.FantasySportsCoach.Common.dll">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>False</IsOptional>
+		</Dependency>
+		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.Common\Bin\KSquared.FantasySportsCoach.Common.xml">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>True</IsOptional>
+		</Dependency>
+		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Bin\KSquared.FantasySportsCoach.SportsModels.dll">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>False</IsOptional>
+		</Dependency>
+		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Bin\KSquared.FantasySportsCoach.SportsModels.xml">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>True</IsOptional>
+		</Dependency>
+		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.Website\Bin\KSquared.FantasySportsCoach.Website.dll">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>False</IsOptional>
+		</Dependency>
+		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.Website\Bin\KSquared.FantasySportsCoach.Website.xml">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>True</IsOptional>
+		</Dependency>
+		<Dependency Include="$(Dir_Shared)extern\NUnit\bin\framework\nunit.framework.dll">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>False</IsOptional>
+		</Dependency>
+		<Dependency Include="$(Dir_Shared)extern\NUnit\bin\framework\nunit.framework.xml">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>True</IsOptional>
+		</Dependency>
+	</ItemGroup>
+	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props')"/>
+	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Dependencies.props')"/>
+	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.Website\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.Website\Dependencies.props')"/>
+</Project>

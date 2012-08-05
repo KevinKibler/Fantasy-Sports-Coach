@@ -3,11 +3,11 @@
 	<Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), Common.targets))\Common.targets" Condition=" '$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), Common.targets))' != '' " />
 	
 	<Target Name="Build">
-		<Message Text="build apps" />
+		<MSBuild Projects="Website\Website.csproj" Targets="Build" />
 	</Target>
 	
 	<Target Name="Clean">
-		<Message Text="clean apps" />
+		<MSBuild Projects="Website\Website.csproj" Targets="Clean" />
 	</Target>
 	
 	<Target Name="Rebuild" DependsOnTargets="Clean;Build" />
