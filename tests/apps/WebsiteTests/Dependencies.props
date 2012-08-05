@@ -20,7 +20,7 @@
 		</Dependency>
 		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.Common\Bin\KSquared.FantasySportsCoach.Common.xml">
 			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsRuntimeDependency>False</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
 		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Bin\KSquared.FantasySportsCoach.SportsModels.dll">
@@ -30,7 +30,7 @@
 		</Dependency>
 		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Bin\KSquared.FantasySportsCoach.SportsModels.xml">
 			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsRuntimeDependency>False</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
 		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.Website\Bin\KSquared.FantasySportsCoach.Website.dll">
@@ -40,7 +40,7 @@
 		</Dependency>
 		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.Website\Bin\KSquared.FantasySportsCoach.Website.xml">
 			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsRuntimeDependency>False</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
 		<Dependency Include="$(Dir_Shared)extern\NUnit\bin\framework\nunit.framework.dll">
@@ -50,7 +50,7 @@
 		</Dependency>
 		<Dependency Include="$(Dir_Shared)extern\NUnit\bin\framework\nunit.framework.xml">
 			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsRuntimeDependency>False</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
 		<Dependency Include="$(Dir_Shared)extern\Microsoft\ASP.NET MVC3\System.Web.Mvc.dll">
@@ -60,7 +60,7 @@
 		</Dependency>
 		<Dependency Include="$(Dir_Shared)extern\Microsoft\ASP.NET MVC3\System.Web.Mvc.xml">
 			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsRuntimeDependency>False</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
 	</ItemGroup>

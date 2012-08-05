@@ -20,7 +20,7 @@
 		</Dependency>
 		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.Common\Bin\KSquared.FantasySportsCoach.Common.xml">
 			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsRuntimeDependency>False</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
 		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Bin\KSquared.FantasySportsCoach.SportsModels.dll">
@@ -30,7 +30,7 @@
 		</Dependency>
 		<Dependency Include="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Bin\KSquared.FantasySportsCoach.SportsModels.xml">
 			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsRuntimeDependency>False</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
 	</ItemGroup>
