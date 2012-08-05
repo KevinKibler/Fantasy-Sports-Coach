@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\KSquared.FantasySportsCoach.SportsModels.Tests.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Properties\KSquared.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="KSquared.FantasySportsCoach.Common">
       <SpecificVersion>False</SpecificVersion>
@@ -64,10 +70,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Source\SportsModelTests.cs" />
+    <Compile Include="Properties\Version.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Build.targets" />
     <None Include="Dependencies.props" />
+    <None Include="Properties\KSquared.snk" />
     <None Include="Resources\NHL-Schedule2.csv" />
   </ItemGroup>
   <ItemGroup>

@@ -58,6 +58,7 @@
   <ItemGroup>
     <None Include="Dependencies.props" />
     <None Include="Build.targets" />
+    <None Include="Properties\KSquared.snk" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,3 +10,7 @@ obj/
 bin/
 Release/
 Store/
+
+#Common project metadata
+Version.cs
+KSquared.snk

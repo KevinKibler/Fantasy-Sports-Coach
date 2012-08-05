@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\KSquared.FantasySportsCoach.SportsModels.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Properties\KSquared.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="KSquared.FantasySportsCoach.Common">
       <SpecificVersion>False</SpecificVersion>
@@ -67,10 +73,12 @@
     <Compile Include="Source\Team.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Properties\Version.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Build.targets" />
     <None Include="Dependencies.props" />
+    <None Include="Properties\KSquared.snk" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
