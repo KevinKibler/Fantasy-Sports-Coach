@@ -27,6 +27,9 @@ namespace KSquared.FantasySportsCoach.SportsModels
 		#endregion Constructors
 		#region Properties
 
+		/// <summary>Unique Id.</summary>
+		public int Id { get; set; }
+
 		/// <summary>Gets or sets the league the team belongs to.</summary>
 		public League League { get; set; }
 

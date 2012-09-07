@@ -30,6 +30,9 @@ namespace KSquared.FantasySportsCoach.SportsModels
 		#endregion Constructors
 		#region Properties
 
+		/// <summary>Unique Id.</summary>
+		public int Id { get; set; }
+
 		private GenericKeyedCollection<string, Team> teams = new GenericKeyedCollection<string, Team>(delegate(Team team)
 		{
 			if (team == null) { throw new ArgumentNullException("team"); }

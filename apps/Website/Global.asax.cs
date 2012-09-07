@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Data.Entity;
+using KSquared.FantasySportsCoach.Website.Models;
 
 namespace FantasySportsCoach
 {
@@ -31,6 +33,8 @@ namespace FantasySportsCoach
 
 		protected void Application_Start()
 		{
+			Database.SetInitializer(new FantasySportsCoachDbInitializer());
+
 			AreaRegistration.RegisterAllAreas();
 
 			RegisterGlobalFilters(GlobalFilters.Filters);

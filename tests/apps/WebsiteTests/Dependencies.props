@@ -53,16 +53,6 @@
 			<IsRuntimeDependency>False</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
-		<Dependency Include="$(Dir_Shared)extern\Microsoft\ASP.NET MVC3\System.Web.Mvc.dll">
-			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>True</IsRuntimeDependency>
-			<IsOptional>False</IsOptional>
-		</Dependency>
-		<Dependency Include="$(Dir_Shared)extern\Microsoft\ASP.NET MVC3\System.Web.Mvc.xml">
-			<DestinationDirectory>bin</DestinationDirectory>
-			<IsRuntimeDependency>False</IsRuntimeDependency>
-			<IsOptional>True</IsOptional>
-		</Dependency>
 	</ItemGroup>
 	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props')"/>
 	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Dependencies.props')"/>

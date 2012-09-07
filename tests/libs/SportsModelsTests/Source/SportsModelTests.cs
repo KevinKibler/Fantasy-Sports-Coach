@@ -6,6 +6,7 @@ using KSquared.FantasySportsCoach.Common;
 using KSquared.FantasySportsCoach.SportsModels;
 
 using NUnit.Framework;
+using System.IO;
 
 namespace KSquared.FantasySportsCoach.SportsModels.Tests
 {
@@ -26,7 +27,8 @@ namespace KSquared.FantasySportsCoach.SportsModels.Tests
 		[SetUp]
 		public static void Setup()
 		{
-			//SportsModelTests.league = LeagueCsvAdaptor.LoadCsv(Properties.Resources.NHL_Schedule2);
+			//MemoryStream stream = new MemoryStream(Properties.Resources.NHLSchedule2010);
+			//League league = LeagueCsvAdaptor.LoadCsv(stream);
 			SportsModelTests.league = new League();
 		}
 

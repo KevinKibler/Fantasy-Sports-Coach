@@ -76,11 +76,12 @@
     <None Include="Build.targets" />
     <None Include="Dependencies.props" />
     <None Include="Properties\KSquared.snk" />
-    <None Include="Resources\NHL-Schedule2.csv" />
+    <None Include="Resources\NHLSchedule2010.csv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

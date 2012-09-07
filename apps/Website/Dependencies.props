@@ -33,6 +33,11 @@
 			<IsRuntimeDependency>False</IsRuntimeDependency>
 			<IsOptional>True</IsOptional>
 		</Dependency>
+		<Dependency Include="$(Dir_Shared)extern\Microsoft\Entity\EntityFramework.dll">
+			<DestinationDirectory>bin</DestinationDirectory>
+			<IsRuntimeDependency>True</IsRuntimeDependency>
+			<IsOptional>False</IsOptional>
+		</Dependency>
 	</ItemGroup>
 	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.Common\Dependencies.props')"/>
 	<Import Project="$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Dependencies.props" Condition="Exists('$(Dir_Store)KSquared.FantasySportsCoach.SportsModels\Dependencies.props')"/>

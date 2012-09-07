@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KSquared.FantasySportsCoach.SportsModels.Tests.Properties {
+namespace KSquared.FantasySportsCoach.Website.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace KSquared.FantasySportsCoach.SportsModels.Tests.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KSquared.FantasySportsCoach.SportsModels.Tests.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KSquared.FantasySportsCoach.Website.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
